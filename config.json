@@ -1,0 +1,46 @@
+{
+  "inbounds": [
+    {
+      "port": 443, 
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "d2cb8181-233c-4d18-9972-8a1b04db9448",
+            "level": 0
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "certificates": [
+            {
+              "certificateFile": "/etc/letsencrypt/live/saad-proxy-665703569579.us-central1.run.app/fullchain.pem",
+              "keyFile": "/etc/letsencrypt/live/saad-proxy-665703569579.us-central1.run.app/privkey.pem"
+            }
+          ]
+        },
+        "wsSettings": {
+          "path": "/topas",
+          "headers": {
+            "Host": "saad-proxy-665703569579.us-central1.run.app"
+          }
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {},
+      "tag": "blocked"
+    }
+  ]
+}
